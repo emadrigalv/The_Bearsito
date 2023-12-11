@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifes: 3
   speed: 7
-  jumpForce: 30
+  jumpForce: 35
   tiempoCoyote: 0.3
