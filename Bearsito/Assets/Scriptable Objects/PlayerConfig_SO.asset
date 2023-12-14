@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c77c4ee2c7673648b7504255d51aa3c, type: 3}
   m_Name: PlayerConfig_SO
   m_EditorClassIdentifier: 
-  lifes: 3
+  playerName: Rigoberto
+  initialLives: 3
   speed: 7
   jumpForce: 35
   tiempoCoyote: 0.3

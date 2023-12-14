@@ -8,16 +8,15 @@ using System;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text amountCoins;
-    [SerializeField] private int coinsCollected = 0;
-    public void UpdateLives()
-    {
+    [SerializeField] private TMP_Text amountLives;
 
+    public void UpdateLives(int actualLives)
+    {
+        amountLives.text = "x " + actualLives;
     }
 
-    public void UpdateCoins()
+    public void UpdateCoins(int coinsCollected)
     {
-        coinsCollected++;
-
         amountCoins.text = "x " + coinsCollected;
     }
 

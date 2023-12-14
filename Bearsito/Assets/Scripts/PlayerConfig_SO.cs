@@ -7,7 +7,8 @@ using UnityEngine;
 public class PlayerConfig_SO : ScriptableObject
 {
 
-    public int lifes;
+    public string playerName;
+    public int initialLives;
     public float speed;
     public int jumpForce;
     public float tiempoCoyote;
