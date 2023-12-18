@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sprite;
     public PlayerConfig_SO playerStats;
 
-
+    private bool inPlatform;
+    [SerializeField] public Rigidbody2D platformRb;
 
     private float xDirection = 0;
 
@@ -36,18 +37,29 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerMovement();
+        UpdatePlayerAnimations();
+    }
+
+    private void PlayerMovement()
+    {
+
         xDirection = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(xDirection * playerStats.speed, rb.velocity.y);
+
+        if (inPlatform)
+        {
+            rb.velocity = new Vector2((xDirection * playerStats.speed) + platformRb.velocity.x, rb.velocity.y);
+        }
+        else 
+        { 
+            rb.velocity = new Vector2(xDirection * playerStats.speed, rb.velocity.y);
+        }
 
         if (IsGrounded() && Input.GetButtonDown("Jump"))
         {
 
             rb.velocity = new Vector2(rb.velocity.x, playerStats.jumpForce);
         }
-
-        //Play and update the player animations
-        UpdatePlayerAnimations();
-
     }
 
     private void UpdatePlayerAnimations()
@@ -100,5 +112,24 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(new Vector2(transform.position.x - 0.1f, transform.position.y + moveCircle), radio);
+    }
+
+    public void StopMovement()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        animator.SetBool("death", true);
+    }
+
+    public void ActivateMovement()
+    {
+        animator.SetBool("death", false);
+        //animator.SetInteger("state", 0);
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    public void ToggleInPlatform(bool toggle, Rigidbody2D platform)
+    {
+        inPlatform = toggle;
+        platformRb = platform;
     }
 }

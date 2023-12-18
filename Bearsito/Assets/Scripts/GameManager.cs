@@ -8,9 +8,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance; // Referencia global a un objeto en especifico - Estrategia de programacion -> Patron de diseño
 
     private int coins = 0;
+    private int lives;
 
     [SerializeField] private UIManager uiManager;
     [SerializeField] private PlayerConfig_SO playerData;
+    [SerializeField] private PlayerController player;
+    [SerializeField] private Transform spawnPosition;
 
     private void Awake()
     {
@@ -24,16 +27,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        lives = playerData.initialLives;
+    }
+
     public void AddCoin(int coinsToAdd = 1)
     {
         coins += coinsToAdd;
         uiManager.UpdateCoins(coins);
     }
 
-   // public void ReduceLives()
-    //{   
+    public void ReduceLives()
+    {
 
+        StartCoroutine(WaitForRestart_Coroutine());
+        lives--;
+        uiManager.UpdateLives(lives);
 
-       // uiManager.UpdateLives();
-    //}
+    }
+
+    IEnumerator WaitForRestart_Coroutine()
+    {
+        player.StopMovement();
+
+        yield return new WaitForSeconds(1.0f);
+
+        player.transform.position = spawnPosition.position;
+
+        player.ActivateMovement();
+    }
+
 }
