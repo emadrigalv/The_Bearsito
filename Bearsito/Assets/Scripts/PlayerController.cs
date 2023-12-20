@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
 
     private enum MovementState {idle, running, jumping, falling}
 
-    // Start is called before the first frame update
     void Awake()
     {
 
@@ -34,7 +33,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         PlayerMovement();
@@ -57,8 +55,8 @@ public class PlayerController : MonoBehaviour
 
         if (IsGrounded() && Input.GetButtonDown("Jump"))
         {
-
             rb.velocity = new Vector2(rb.velocity.x, playerStats.jumpForce);
+            FindObjectOfType<AudioManager>().Play("Jump");
         }
     }
 
@@ -86,7 +84,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Falling
-        else if (rb.velocity.y > 1)
+        else if (rb.velocity.y > 2.5f)
         {
             state = MovementState.falling;
         }

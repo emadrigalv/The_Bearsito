@@ -34,13 +34,14 @@ public class GameManager : MonoBehaviour
 
     public void AddCoin(int coinsToAdd = 1)
     {
+        FindObjectOfType<AudioManager>().Play("Coin");
         coins += coinsToAdd;
         uiManager.UpdateCoins(coins);
     }
 
     public void ReduceLives()
     {
-
+        FindObjectOfType<AudioManager>().Play("Death");
         StartCoroutine(WaitForRestart_Coroutine());
         lives--;
         uiManager.UpdateLives(lives);

@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour ,IPickable
 {
-
     public void TakeIt()
     {
-
         GameManager.Instance.AddCoin();
         Destroy(gameObject);
-
     }
 
 }

@@ -50,4 +50,10 @@ public class FollowPlatform : MonoBehaviour
             movement.ToggleInPlatform(false, null);
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.grey;
+        Gizmos.DrawLine(wayPoint1.position, wayPoint2.position);
+    }
 }
