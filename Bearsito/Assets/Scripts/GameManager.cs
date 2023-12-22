@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public static GameManager Instance; // Referencia global a un objeto en especifico - Estrategia de programacion -> Patron de diseño
+    public static GameManager instance; // Referencia global a un objeto en especifico - Estrategia de programacion -> Patron de diseño
 
     private int coins = 0;
     private int lives;
@@ -17,13 +17,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null)
+        if(instance != null)
         {
             Destroy(this);
         }
         else
         {
-            Instance = this;
+            instance = this;
         }
     }
 
@@ -39,13 +39,19 @@ public class GameManager : MonoBehaviour
         uiManager.UpdateCoins(coins);
     }
 
+    public void Addlives()
+    {
+        FindObjectOfType<AudioManager>().Play("Apple");
+        lives++;
+        uiManager.UpdateAddLives(lives);
+    }
+
     public void ReduceLives()
     {
         FindObjectOfType<AudioManager>().Play("Death");
         StartCoroutine(WaitForRestart_Coroutine());
         lives--;
         uiManager.UpdateLives(lives);
-
     }
 
     IEnumerator WaitForRestart_Coroutine()

@@ -7,6 +7,6 @@ public class Trap : MonoBehaviour, ITrap
 
     public void KillPlayer()
     {
-        GameManager.Instance.ReduceLives();
+        GameManager.instance.ReduceLives();
     }
 }

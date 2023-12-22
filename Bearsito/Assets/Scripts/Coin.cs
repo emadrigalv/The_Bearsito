@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour ,IPickable
+public class Coin : MonoBehaviour, IPickable
 {
     public void TakeIt()
     {
-        GameManager.Instance.AddCoin();
+        GameManager.instance.AddCoin();
         Destroy(gameObject);
     }
 

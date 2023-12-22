@@ -3,7 +3,7 @@ using UnityEngine;
 using Unity.VisualScripting;
 
 [System.Serializable]
-public class Sound_SO 
+public class Sound 
 {
     public string name;
 

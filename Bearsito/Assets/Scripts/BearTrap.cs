@@ -11,6 +11,6 @@ public class BearTrap : MonoBehaviour, ITrap
     {
         animator.SetBool("activateTrap", true);
         bearTrapCollider.enabled = false;
-        GameManager.Instance.ReduceLives();
+        GameManager.instance.ReduceLives();
     }
 }
