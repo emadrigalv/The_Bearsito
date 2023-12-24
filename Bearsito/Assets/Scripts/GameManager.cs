@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
 
-        player.transform.position = spawnPosition.position;
+        player.transform.position = new Vector3(spawnPosition.position.x+0.5f, spawnPosition.position.y+1.7f, spawnPosition.position.z);
 
         player.ActivateMovement();
     }
