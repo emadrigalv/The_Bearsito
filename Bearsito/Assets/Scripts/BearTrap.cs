@@ -10,6 +10,7 @@ public class BearTrap : MonoBehaviour, ITrap
     public void KillPlayer()
     {
         animator.SetBool("activateTrap", true);
+        FindObjectOfType<AudioManager>().Play("BearTrap");
         bearTrapCollider.enabled = false;
         GameManager.instance.ReduceLives();
     }
