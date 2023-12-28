@@ -16,4 +16,4 @@ MonoBehaviour:
   initialLives: 3
   speed: 7
   jumpForce: 25
-  tiempoCoyote: 0.3
+  coyoteTime: 0.07

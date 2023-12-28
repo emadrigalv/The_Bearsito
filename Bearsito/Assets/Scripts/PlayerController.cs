@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float radio;
     [SerializeField] private LayerMask layerMask;
 
+    [SerializeField] private float coyoteTimeAux;
+
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer sprite;
@@ -53,11 +55,26 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(xDirection * playerStats.speed, rb.velocity.y);
         }
 
-        if (IsGrounded() && Input.GetButtonDown("Jump"))
+        if(IsGrounded())
+        {
+            coyoteTimeAux = playerStats.coyoteTime;
+        }
+        else
+        {
+            coyoteTimeAux -= Time.deltaTime;
+        }
+
+        if (coyoteTimeAux > 0f && Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, playerStats.jumpForce);
             FindObjectOfType<AudioManager>().Play("Jump");
         }
+        else if(Input.GetButtonDown("Jump") && rb.velocity.y > 0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
+            coyoteTimeAux = 0f;
+        }
+        //Debug.Log(rb.velocity.y);
     }
 
     private void UpdatePlayerAnimations()

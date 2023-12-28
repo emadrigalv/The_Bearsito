@@ -11,6 +11,6 @@ public class PlayerConfig_SO : ScriptableObject
     public int initialLives;
     public float speed;
     public int jumpForce;
-    public float tiempoCoyote;
+    public float coyoteTime;
     
 }
