@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         if (coyoteTimeAux > 0f && Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, playerStats.jumpForce);
-            FindObjectOfType<AudioManager>().Play("Jump");
+            AudioManager.instance.Play("Jump");
         }
         else if(Input.GetButtonDown("Jump") && rb.velocity.y > 0f)
         {
