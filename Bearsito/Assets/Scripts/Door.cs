@@ -12,9 +12,9 @@ public class Door : MonoBehaviour
 
     [SerializeField] private float speed = 2f;
 
-    [SerializeField] public bool isDoorOpen;
+    //[SerializeField] public bool isDoorOpen;
 
-    [SerializeField] public bool isDoorClose;
+    //[SerializeField] public bool isDoorClose;
 
     public void Awake()
     {
