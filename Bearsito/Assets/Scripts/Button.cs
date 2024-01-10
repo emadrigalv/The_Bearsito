@@ -15,6 +15,8 @@ public class Button : MonoBehaviour
             animator.SetBool("Pressed", true);
             AudioManager.instance.Play("ButtonPressed");
 
+            Debug.Log("Toy Dentro");
+
             door.OpenDoor();
         }
     }
@@ -24,6 +26,8 @@ public class Button : MonoBehaviour
         if (collision.gameObject.CompareTag("Box"))
         {
             animator.SetBool("Pressed", false);
+
+            Debug.Log("Toy fuera sisabe");
 
             door.CloseDoor();   
         }
