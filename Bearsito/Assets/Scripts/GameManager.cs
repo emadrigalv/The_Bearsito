@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerController player;
     [SerializeField] private Transform spawnPosition;
 
+    [SerializeField] private List<GameObject> reloadableObjects;
+
+    
+
     private void Awake()
     {
         if(instance != null)
@@ -30,6 +34,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         lives = playerData.initialLives;
+
+        
     }
 
     public void AddCoin(int coinsToAdd = 1)
@@ -60,9 +66,13 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
 
+        foreach(GameObject reloadable in reloadableObjects)
+        {
+            reloadable.GetComponent<IReloadable>().ReloadObject();
+        }
+
         player.transform.position = new Vector3(spawnPosition.position.x+0.5f, spawnPosition.position.y+1.7f, spawnPosition.position.z);
 
         player.ActivateMovement();
     }
-
 }

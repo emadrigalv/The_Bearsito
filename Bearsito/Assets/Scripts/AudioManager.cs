@@ -37,6 +37,10 @@ public class AudioManager : MonoBehaviour
         Play("Theme");
     }
 
+    /// <summary>
+    /// Play a sound 
+    /// </summary>
+    /// <param name="name">ID name of the sound that will be played</param>
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

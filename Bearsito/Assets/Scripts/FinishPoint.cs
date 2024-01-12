@@ -10,7 +10,7 @@ public class FinishPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Player")
+        if(collision.gameObject.CompareTag("Player"))
         {
             animator.SetBool("LevelComplete", true);
             FindObjectOfType<AudioManager>().Play("LevelComplete");

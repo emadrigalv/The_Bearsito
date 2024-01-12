@@ -2,14 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingPlatform : MonoBehaviour
+/// <summary>
+/// Me gusta el agua
+/// </summary>
+public class FallingPlatform : MonoBehaviour, IReloadable
 {
 
     [SerializeField] private float fallDelay = 1.5f;
-    [SerializeField] private float destroyDelay = 2.5f;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
+
+    private Vector3 initialPosition;
+
+    private void Start()
+    {
+        initialPosition = transform.position;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,6 +34,17 @@ public class FallingPlatform : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         animator.SetBool("Falling", true);
         AudioManager.instance.Play("FallingPlatform");
-        Destroy(this.gameObject, destroyDelay);
+        gameObject.SetActive(false);
     }
+
+    public void ReloadObject()
+    {
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        animator.Rebind();
+        animator.Update(0f);
+        transform.position = initialPosition;
+        gameObject.SetActive(true);
+    }
+
+
 }

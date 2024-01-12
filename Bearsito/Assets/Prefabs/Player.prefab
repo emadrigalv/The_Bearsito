@@ -149,7 +149,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: -0.185}
+  m_Offset: {x: -0.1, y: -0.15}
   m_Size: {x: 0.8, y: 2.2}
   m_Direction: 0
 --- !u!114 &6714596572093835702
@@ -168,7 +168,8 @@ MonoBehaviour:
   radio: 0.4
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
+  coyoteTimeAux: 0
   playerStats: {fileID: 11400000, guid: eb6d6b9edc2bff64dbff7b98cfa7adfa, type: 2}
   platformRb: {fileID: 0}
 --- !u!95 &7868577494467364325

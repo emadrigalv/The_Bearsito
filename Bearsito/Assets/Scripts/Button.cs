@@ -15,7 +15,7 @@ public class Button : MonoBehaviour
             animator.SetBool("Pressed", true);
             AudioManager.instance.Play("ButtonPressed");
 
-            Debug.Log("Toy Dentro");
+            //Debug.Log("Pressed");
 
             door.OpenDoor();
         }
@@ -27,7 +27,7 @@ public class Button : MonoBehaviour
         {
             animator.SetBool("Pressed", false);
 
-            Debug.Log("Toy fuera sisabe");
+            //Debug.Log("No pressed");
 
             door.CloseDoor();   
         }

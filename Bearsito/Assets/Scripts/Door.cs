@@ -12,10 +12,6 @@ public class Door : MonoBehaviour
 
     [SerializeField] private float speed = 2f;
 
-    //[SerializeField] public bool isDoorOpen;
-
-    //[SerializeField] public bool isDoorClose;
-
     public void Awake()
     {
         closedPosition1 = door1.position;
