@@ -15,11 +15,6 @@ public class UIManager : MonoBehaviour
         amountLives.text = "x " + actualLives;
     }
 
-    public void UpdateAddLives(int actualLives)
-    {
-        amountLives.text = "x " + actualLives;
-    }
-
     public void UpdateCoins(int coinsCollected)
     {
         amountCoins.text = "x " + coinsCollected;

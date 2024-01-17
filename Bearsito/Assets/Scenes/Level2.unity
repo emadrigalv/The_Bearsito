@@ -1983,6 +1983,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1006817628
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 586146981609932406, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_Name
+      value: DataHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 245.5128
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 201.04042
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.1228104
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 670768469187469050, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612584629486719014, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1066400779}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38acdc3f39afd4b489d7d011497c8fd3, type: 3}
 --- !u!1 &1010196687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,6 +2430,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9877395c8e6e13641b1ade8707b421c4, type: 3}
+--- !u!114 &1066400779 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5246578332152475169, guid: 9877395c8e6e13641b1ade8707b421c4, type: 3}
+  m_PrefabInstance: {fileID: 1066400778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bdea6cfe51b82b4b8c201a926fadfab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1068517842
 GameObject:
   m_ObjectHideFlags: 0
@@ -9970,8 +10042,9 @@ SceneRoots:
   - {fileID: 452949982}
   - {fileID: 281988097}
   - {fileID: 1066400778}
-  - {fileID: 54510006}
   - {fileID: 2078141287}
+  - {fileID: 1006817628}
+  - {fileID: 54510006}
   - {fileID: 2031343843}
   - {fileID: 1339940233}
   - {fileID: 1607140377}
@@ -9982,9 +10055,9 @@ SceneRoots:
   - {fileID: 2062827921}
   - {fileID: 5809428255350293103}
   - {fileID: 1825259980}
+  - {fileID: 1093628819}
   - {fileID: 1723973357}
   - {fileID: 2068495094}
-  - {fileID: 1093628819}
   - {fileID: 192801242}
-  - {fileID: 852917509}
   - {fileID: 364250847}
+  - {fileID: 852917509}

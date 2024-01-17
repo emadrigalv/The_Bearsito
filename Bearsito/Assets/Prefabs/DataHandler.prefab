@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3695313151271156870
+--- !u!1 &586146981609932406
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2378216819017805375}
-  - component: {fileID: 5246578332152475169}
+  - component: {fileID: 670768469187469050}
+  - component: {fileID: 8612584629486719014}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: DataHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2378216819017805375
+--- !u!4 &670768469187469050
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3695313151271156870}
+  m_GameObject: {fileID: 586146981609932406}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.87543, y: 303.4605, z: -10.062086}
+  m_LocalPosition: {x: 245.5128, y: 201.04042, z: -4.1228104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5246578332152475169
+--- !u!114 &8612584629486719014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3695313151271156870}
+  m_GameObject: {fileID: 586146981609932406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdea6cfe51b82b4b8c201a926fadfab, type: 3}
+  m_Script: {fileID: 11500000, guid: 94bbb4e8da7125046a52c22072cd0bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
-  lives: 0
-  uiManager: {fileID: 6165079535025937802, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
-  player: {fileID: 6714596572093835702, guid: f36d4f59ab2972146adee801964786db, type: 3}
-  spawnPosition: {fileID: 5244242332801537199, guid: df299378e3465b14291613089eb57f21, type: 3}
-  reloadableObjects: []
+  gameManager: {fileID: 5246578332152475169, guid: 9877395c8e6e13641b1ade8707b421c4, type: 3}
+  playerData: {fileID: 11400000, guid: eb6d6b9edc2bff64dbff7b98cfa7adfa, type: 2}

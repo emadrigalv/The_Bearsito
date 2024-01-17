@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        PersistantData.instance.SetInitialData();
         load.LoadNextLevel();
     }
 

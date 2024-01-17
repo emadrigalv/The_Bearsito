@@ -13,7 +13,9 @@ public class FinishPoint : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             animator.SetBool("LevelComplete", true);
-            FindObjectOfType<AudioManager>().Play("LevelComplete");
+            AudioManager.instance.Play("LevelComplete");
+            PersistantData.instance.SaveData();
+            Debug.Log("Aca se guardo sisabe");
             load.LoadNextLevel();
         }
     }

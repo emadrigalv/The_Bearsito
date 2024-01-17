@@ -7,11 +7,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance; // Referencia global a un objeto en especifico - Estrategia de programacion -> Patron de diseño
 
-    private int coins = 0;
-    private int lives;
+    public int coins;
+    public int lives;
 
     [SerializeField] private UIManager uiManager;
-    [SerializeField] private PlayerConfig_SO playerData;
     [SerializeField] private PlayerController player;
     [SerializeField] private Transform spawnPosition;
 
@@ -30,12 +29,14 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
-
-    private void Start()
+    private void Update()
     {
-        lives = playerData.initialLives;
-
-        
+        Debug.Log("LAs livies en el update sisabe " + lives);
+    }
+    public void Start()
+    {
+        PersistantData.instance.LoadData();
+        Debug.Log("Qui cargo sisabe");
     }
 
     public void AddCoin(int coinsToAdd = 1)
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.instance.Play("Apple");
         lives++;
-        uiManager.UpdateAddLives(lives);
+        uiManager.UpdateLives(lives);
     }
 
     public void ReduceLives()
@@ -57,7 +58,14 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.Play("Death");
         StartCoroutine(WaitForRestart_Coroutine());
         lives--;
+        Debug.Log("los lives del gay man" + lives);
         uiManager.UpdateLives(lives);
+    }
+
+    public void SetData(int coinsToSet, int livesToSet)
+    {
+        uiManager.UpdateCoins(coinsToSet);
+        uiManager.UpdateLives(livesToSet);
     }
 
     IEnumerator WaitForRestart_Coroutine()
