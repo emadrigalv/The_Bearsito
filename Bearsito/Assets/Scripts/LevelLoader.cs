@@ -9,6 +9,8 @@ public class LevelLoader : MonoBehaviour
 
     [SerializeField] private float transitionTime = 0.5f;
 
+    private float gameOverScreenTime = 1.5f;
+
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
@@ -22,5 +24,17 @@ public class LevelLoader : MonoBehaviour
 
         SceneManager.LoadScene(levelIndex);
         
-    } 
+    }
+
+    public void GameOver()
+    {
+        StartCoroutine(GameOverCoroutine());
+    }  
+
+    IEnumerator GameOverCoroutine()
+    {
+        yield return new WaitForSeconds(gameOverScreenTime);
+        SceneManager.LoadScene("Menu");
+    }
+    
 }

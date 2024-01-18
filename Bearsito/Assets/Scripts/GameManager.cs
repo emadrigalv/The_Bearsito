@@ -13,10 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     [SerializeField] private PlayerController player;
     [SerializeField] private Transform spawnPosition;
+    [SerializeField] private LevelLoader sceneLoader;
 
     [SerializeField] private List<GameObject> reloadableObjects;
-
-    
 
     private void Awake()
     {
@@ -29,14 +28,10 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
-    private void Update()
-    {
-        Debug.Log("LAs livies en el update sisabe " + lives);
-    }
+
     public void Start()
     {
         PersistantData.instance.LoadData();
-        Debug.Log("Qui cargo sisabe");
     }
 
     public void AddCoin(int coinsToAdd = 1)
@@ -56,9 +51,14 @@ public class GameManager : MonoBehaviour
     public void ReduceLives()
     {
         AudioManager.instance.Play("Death");
-        StartCoroutine(WaitForRestart_Coroutine());
         lives--;
-        Debug.Log("los lives del gay man" + lives);
+
+        if(lives < 1)
+        {
+            GameOver();
+        }
+
+        StartCoroutine(WaitForRestart_Coroutine());
         uiManager.UpdateLives(lives);
     }
 
@@ -83,4 +83,12 @@ public class GameManager : MonoBehaviour
 
         player.ActivateMovement();
     }
+    
+    public void GameOver()
+    {
+        uiManager.StartGameOver(coins);
+        sceneLoader.GameOver();
+        player.StopMovement();
+    }
+
 }

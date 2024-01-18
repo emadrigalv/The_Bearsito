@@ -132,13 +132,14 @@ public class PlayerController : MonoBehaviour
     public void StopMovement()
     {
         rb.bodyType = RigidbodyType2D.Static;
+        this.enabled = false;
         animator.SetBool("death", true);
     }
 
     public void ActivateMovement()
     {
         animator.SetBool("death", false);
-        //animator.SetInteger("state", 0);
+        this.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
 

@@ -941,6 +941,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6165079535025937802, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 627747130}
+    - target: {fileID: 6165079535025937802, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
+      propertyPath: coinScore
+      value: 
+      objectReference: {fileID: 627747128}
+    - target: {fileID: 6165079535025937802, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 627747129}
+    - target: {fileID: 7186929102184780163, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
+      propertyPath: m_text
+      value: COINS x
+      objectReference: {fileID: 0}
     - target: {fileID: 7652711634070774349, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -950,6 +966,27 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
+--- !u!114 &627747128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7186929102184780163, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
+  m_PrefabInstance: {fileID: 627747127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &627747129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8475571634147820339, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
+  m_PrefabInstance: {fileID: 627747127}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &627747130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7199990525947754836, guid: a3521a13f9e1bb344b946881aceb2d68, type: 3}
+  m_PrefabInstance: {fileID: 627747127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &647896121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1895,6 +1932,10 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 1729416303}
+    - target: {fileID: 5246578332152475169, guid: 9877395c8e6e13641b1ade8707b421c4, type: 3}
+      propertyPath: sceneLoader
+      value: 
+      objectReference: {fileID: 1014023937}
     - target: {fileID: 5246578332152475169, guid: 9877395c8e6e13641b1ade8707b421c4, type: 3}
       propertyPath: spawnPosition
       value: 
@@ -5776,11 +5817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9205785747224487713, guid: f36d4f59ab2972146adee801964786db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.91
+      value: -7.18
       objectReference: {fileID: 0}
     - target: {fileID: 9205785747224487713, guid: f36d4f59ab2972146adee801964786db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.15
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 9205785747224487713, guid: f36d4f59ab2972146adee801964786db, type: 3}
       propertyPath: m_LocalPosition.z
